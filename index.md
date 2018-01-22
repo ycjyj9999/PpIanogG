@@ -6,11 +6,7 @@
 
 ### C/C++
 
-### 安卓
+### Android
 
-**BOLD**
-
-_Italic_
-
-### 小玩意
+### Bauble
 
