@@ -4,7 +4,7 @@
 
 ### JAVA
 
-[【JVM之旅】第一次认识jvm](/Java/JVM/1.md)
+[【JVM之旅】第一次认识jvm](./Java/JVM/1.md)
 
 ### C/C++
 
