@@ -4,7 +4,7 @@
 
 ### JAVA
 
-[【JVM之旅】第一次认识jvm](https://github.com/ycjyj9999/PpIanogG/edit/master/index.md)
+[【JVM之旅】第一次认识jvm](Java/JVM/1.md)
 
 ### C/C++
 
