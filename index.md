@@ -4,12 +4,12 @@
 
 ### [JAVA](./JAVA/index.md)
 
-[C/C++](./C/index.md)
+###[C/C++](./C/index.md)
+--------------------------
+###[JVM](./JVM/index.md)
 
-[JVM](./JVM/index.md)
-
-[Android](./Android/index.md)
-
-[Bauble](./Bauble/index.md)
+###[Android](./Android/index.md)
+--------------------------
+###[Bauble](./Bauble/index.md)
 
 
