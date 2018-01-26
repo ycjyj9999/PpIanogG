@@ -74,7 +74,7 @@ public class ExceptionDemo {
 
 ## 2.JAVA异常
 
-在Java语言中，异常可以分为俩类：可查的异常（checked exceptions）和不可查的异常（unchecked exceptions）。Unchecked异常包括java.lang.RuntimException、java.lang.Error以及它们的子类，其他异常都是Checked异常。
+在Java语言中，异常可以分为俩类：受检异常（checked exceptions）和非受检异常（unchecked exceptions）。Unchecked异常包括java.lang.RuntimException、java.lang.Error(Error属于特殊情况，因为原理比较相似，所以在这放一起讨论)以及它们的子类，其他异常都是Checked异常。
 所有异常最终都继承自Throwable类。以下许多概念解释参考自《Java虚拟机规范第八版》和 [深入理解java异常](http://blog.csdn.net/hguisu/article/details/6155636)。
 
 * **Throwable：** 有两个重要的子类：Exception（异常）和 Error（错误），二者都是 Java 异常处理的重要子类，各自都包含大量子类。
@@ -83,7 +83,7 @@ public class ExceptionDemo {
 （Java 虚拟机）出现的问题。例如，Java虚拟机运行错误（Virtual MachineError），当 JVM 不再有继续执行操作所需的内存资源时，将出现 OutOfMemoryError。这些异常发生时，Java虚拟机（JVM）一般会选择线程终止。
 * **Exception：** 是程序本身可以处理的异常。
 
-Exception 类有一个重要的子类 RuntimeException。RuntimeException 类及其子类表示“JVM 常用操作”引发的错误。例如，若试图使用空值对象引用、除数为零或数组越界，则分别引发运行时异常（NullPointerException、ArithmeticException）和 ArrayIndexOutOfBoundException。
+Exception 类有一个重要的子类 RuntimeException。RuntimeException 类及其子类表示“JVM 常用操作”引发的错误。例如，若试图使用空值对象引用、除数为零或数组越界，则分别引发运行时异常NullPointerException、ArithmeticException和 ArrayIndexOutOfBoundException。
 
 注意：异常和错误的区别：异常能被程序本身可以处理，错误是无法处理。
 
@@ -230,6 +230,7 @@ double testEx() throws java.lang.Exception;
 对比可得，他们的0-29字节都是一样的，区别是第30字节。在我使用的Oracle的Java8编译器规范里，finally是被规定为执行throw或者return的。如果finally区块内没有return，则默认执行athrow指令，将拿到的异常抛出。
 而当finally区块内出现了return语句，则athrow被覆盖，**也就是说如果在finally监视范围内的未被处理的异常将会丢失，也就产生了文章开头的现象**。
 
+**在编译期间，代码出现的异常，会被解释为throw语句，被异常表中对应的异常处理器所察觉并处理，若异常层层抛出而最终没能被正确处理，则编译报错**
 ### 运行异常
 
 运行异常在上面的概念中解释的很准确，我来举个例子更方便大家理解：代码中的很多异常都是不会被编译器发现的，比如若在一份代码中出现int b = 1/0；则会出现除数不能为0的异常，如果这部分代码没有处于异常处理器的监视范围，那么代码将运行报错并把异常打印出来。这类异常，我们称为运行异常。
@@ -251,6 +252,7 @@ double testEx() throws java.lang.Exception;
 
 * **在虚拟机内部的栈帧结构中，一般会有指向自己代码结束处return的指针和指向上一级调用处的指针，所以在异常查找时指针可以在虚拟机栈中穿梭** 
 
+* **不同的虚拟机都有不同的异常处理机制，这里只是提出了一种方案**
 
 ## Java异常总结
 
@@ -259,7 +261,7 @@ double testEx() throws java.lang.Exception;
 * **无论在何处return，当前方法的finally总会被执行。**
 
 
-* **finally里的return会吃掉它之前所有的未处理异常。**
+* **finally里的return会吃掉它之前捕捉的所有未处理异常。**
 
 ### 异常处理语句的语法规则：
 
