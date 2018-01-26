@@ -199,26 +199,26 @@ public class test1 {
 double testEx() throws java.lang.Exception;
         // 原代码                          //注释return后
     Code:
-       0: aload_0                          0: aload_0 
+       0: aload_0                         0: aload_0 
        1: dconst_0                        1: dconst_0
        2: putfield      #2                2: putfield      #2 
-       5: new           #3                 5: new           #3
-       8: dup                                 8: dup
-       9: invokespecial #4            9: invokespecial #4 
-      12: athrow                           12: athrow
-      13: astore_1                        13: astore_1
-      14: aload_0                          14: aload_0 
-      15: dconst_1                        15: dconst_1
+       5: new           #3                5: new           #3
+       8: dup                             8: dup
+       9: invokespecial #4                9: invokespecial #4 
+      12: athrow                         12: athrow
+      13: astore_1                       13: astore_1
+      14: aload_0                        14: aload_0 
+      15: dconst_1                       15: dconst_1
       16: putfield      #2               16: putfield      #2
-      19: aload_1                          19: aload_1 
-      20: athrow                           20: athrow
-      21: astore_2                         21: astore_2
-      22: aload_0                          22: aload_0
+      19: aload_1                        19: aload_1 
+      20: athrow                         20: athrow
+      21: astore_2                       21: astore_2
+      22: aload_0                        22: aload_0
       23: ldc2_w        #5               23: ldc2_w        #5
       26: putfield      #2               26: putfield      #2
-      29: aload_2                          29: aload_0 
-      30: athrow                           30: getfield      #2
-                                                  33: dreturn
+      29: aload_2                        29: aload_0 
+      30: athrow                         30: getfield      #2
+                                         33: dreturn
     Exception table:
        from    to  target type
            5    13    13   Class java/lang/Exception
