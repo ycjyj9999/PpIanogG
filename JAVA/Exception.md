@@ -227,7 +227,9 @@ double testEx() throws java.lang.Exception;
 ```
 
 注释return后的table我并没有写上，因为排版不太方便，但它的内容和注释return之前是一模一样的，也就是说**finally里的return操作并不影响它作为异常处理器的功能**。
+
 对比可得，他们的0-29字节都是一样的，区别是第30字节。在我使用的Oracle的Java8编译器规范里，finally是被规定为执行throw或者return的。如果finally区块内没有return，则默认执行athrow指令，将拿到的异常抛出。
+
 而当finally区块内出现了return语句，则athrow被覆盖，**也就是说如果在finally监视范围内的未被处理的异常将会丢失，也就产生了文章开头的现象**。
 
 **在编译期间，代码出现的异常，会被解释为throw语句，被异常表中对应的异常处理器所察觉并处理，若异常层层抛出而最终没能被正确处理，则编译报错**
