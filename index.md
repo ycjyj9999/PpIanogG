@@ -4,13 +4,15 @@
 
 ### 语言学习
 
-#### [JAVA](./JAVA/index.md)
+#### [Java](./JAVA/index.md)
 
-* JAVA异常处理
+* Java异常处理 [->](./JAVA/Exception.md)
 
-* JAVA多线程
+* Java数组
 
-* JAVA锁
+* Java多线程
+
+* Java锁
 
 #### [C/C++](./C/index.md)
 
