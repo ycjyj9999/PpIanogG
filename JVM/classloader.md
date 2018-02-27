@@ -33,8 +33,7 @@ public class Jtlyc {
 ```
 
 
-**目前大家常用的jvm的执行结果是1和0，如果你答对了，知道其中细节和原理，并且能够完整的想象出得到这个结果的过程，那么继续往下读对你来说是在浪费时间。
-**
+**目前大家常用的jvm的执行结果是1和0，如果你答对了，知道其中细节和原理，并且能够完整的想象出得到这个结果的过程，那么继续往下读对你来说是在浪费时间。**
 
 **准确地来说，这道题目的正确结果是x+1和0(根据不同的虚拟机规范，x的取值不同)。**
 
@@ -314,5 +313,9 @@ invoke-interface,而后者是invoke-virtual)。可以看到,对接口方法的�
 回归题目开头的那道题目，我来写一遍我理解的简单步骤，对应步骤出现的原因，可以重新看文章内容。
 
 ①装载Jtlyc：类Jtlyc被加载进JVM。
-②准备，解析Jtlyc
-③执行Jtlyc：出发了jtClassLoader
+②准备，解析，初始化Jtlyc。
+③执行Jtlyc：调用了jtClassLoader的静态方法，所以需要对jtClassLoader进行初始化。
+④装载jtClassLoader:在进行初始化时发现并未装载jtClassLoader类，所以先进行装载。
+⑤准备，解析jtClassLoader:对jtClassLoader中的静态域分配空间，并将counter1和counter2赋0。
+⑥初始化jtClassLoader：在初始化过程中，发现执行了jtClassLoader的构造函数。但执行类的构造函数前，必须对类进行初始化，所以发生了初始化递归。按照文中介绍的原理，这里虚拟机不会卡死，而是执行了构造函数，counter1和counter2变为1和1。然后继续初始化，由于counter1没有赋值，所以没有改变内存中存储的值，而counter2变为0。
+⑦静态方法调用结束，继续执行print，显示1和0。
