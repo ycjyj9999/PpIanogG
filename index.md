@@ -29,19 +29,17 @@
 
 #### [JVM](./JVM/index.md)
 
-* JVM总结
+* JVM总结[->](./JVM/index.md)
 
-* JVM类加载器
+* JVM类加载器 [->](./JVM/classloader.md)
 
 * JVM堆栈设计
 
 * JVM多线程设计
 
-* JVM异常处理
-
 #### [Android](./Android/index.md)
 
-* 搭建安卓源码
+* 搭建安卓源码[->](Androidsrc.md)
 
 * APK加固
 
