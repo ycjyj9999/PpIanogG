@@ -8,6 +8,8 @@
 
 * Java异常处理 [->](./JAVA/Exception.md)
 
+* JNI [->](./JAVA/JNI.md)
+
 * Java数组
 
 * Java多线程
