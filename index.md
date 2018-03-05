@@ -22,7 +22,6 @@
 
 * jmp_buf
 
-
 --------------------------
 
 ### 实战经历
@@ -33,19 +32,10 @@
 
 * JVM类加载器 [->](./JVM/classloader.md)
 
-* JVM堆栈设计
-
-* JVM多线程设计
 
 #### [Android](./Android/index.md)
 
 * 搭建安卓源码[->](Androidsrc.md)
-
-* APK加固
-
-* XML二进制文件修改器
-
-* 脱壳
 
 
 --------------------------
@@ -54,6 +44,6 @@
 
 #### [Bauble](./Bauble/index.md)
 
-* Docker[->](./Baube/Docker.md)
+* Docker[->](./Bauble/Docker.md)
 
-* Soot[->](./Baube/Soot.md)
+* Soot[->](./Bauble/Soot.md)
