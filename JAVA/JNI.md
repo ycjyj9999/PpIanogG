@@ -33,7 +33,7 @@ public class hello {
 ```
 **hello类里有一个Add的public方法，它实现了俩参数相加，并将方法的域a做了修改。我们下面通过本地方法调用，来实现这个功能，看下面的代码**
 ```java
-public class mysql {
+public class hello {
     static {
         System.loadLibrary("demo");
     }
@@ -42,7 +42,7 @@ public class mysql {
     public static void main(String[] args){
         int x = 2;
         int y = 3;
-        mysql test = new mysql();
+        hello test = new hello();
         System.out.println(test.a);
         System.out.println(test.Add(x,y));
         System.out.println(test.a);
@@ -90,8 +90,8 @@ JNIEXPORT jint JNICALL Java_hello_Add
 
 ```C
 #include <stdlib.h>
-#include "mysql.h"
-JNIEXPORT jint JNICALL Java_mysql_Add(JNIEnv *env, jobject obj, jint x, jint y){
+#include "hello.h"
+JNIEXPORT jint JNICALL Java_hello_Add(JNIEnv *env, jobject obj, jint x, jint y){
     while(y>0){
 	y--;
 	x++;
