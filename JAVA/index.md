@@ -7,6 +7,8 @@
 
 * Java数组的前世今生 [->](Shuzu.md)
 
+* Java四种内部类 [->](Inclass.md)
+
 * JAVA多线程
 
 * JAVA锁

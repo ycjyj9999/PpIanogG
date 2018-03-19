@@ -10,6 +10,8 @@
 
 * JNI [->](./JAVA/JNI.md)
 
+* Java内部类 [->](./JAVA/Inclass.md)
+
 * Java数组
 
 * Java多线程
