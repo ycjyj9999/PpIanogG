@@ -36,10 +36,15 @@
 
 * JVM类加载器 [->](./JVM/classloader.md)
 
+* JVM堆栈设计
+
+* JVM多线程
+
+* JVM本地方法调用处理
 
 #### [Android](./Android/index.md)
 
-* 搭建安卓源码[->](Androidsrc.md)
+* 搭建安卓源码[->](./Android/Androidsrc.md)
 
 
 --------------------------
